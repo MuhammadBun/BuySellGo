@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>API_DOC</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="authentication">Authentication</h1>
+<p>The authentication folder contains a set of APIs that allow users to
+authenticate and manage their accounts on the platform. This includes
+APIs for registering a new account, logging in to an existing account,
+logging out of the current session, and logging out of all active
+sessions.</p>
+<p>The register API allows users to create a new account with the
+provided information, including email, password, username, bio, contact
+information, image, and account status. The login API allows users to
+authenticate by providing their email and password, and if successful,
+returns an authentication token that can be used to access protected
+resources. The logout API allows users to log out of the current
+session, while the logout all API allows users to log out of all active
+sessions across devices.</p>
+<p>The authentication APIs are designed to be secure and reliable, using
+industry-standard encryption algorithms and authentication protocols to
+protect user data and prevent unauthorized access. These APIs are
+essential for any web application that requires user authentication and
+management, ensuring that only authorized users can access protected
+resources and that user accounts are managed securely and
+efficiently.</p>
+<h2 id="register">Register</h2>
+<p>The <strong>Register</strong> API allows users to create a new
+account with the provided information, including email, password,
+username, bio, contact information, image, and account status. The email
+field is mandatory and must be a unique email address. The password must
+meet certain requirements, including having at least one lowercase and
+one uppercase letter, at least one number, and being at least 8
+characters long. The username must be unique and must contain at least
+one letter and be at least 6 characters long.</p>
+<p>If the provided email or username already exists in the database, the
+API will return an error message indicating that the user already
+exists. Once all of the required fields have been provided and
+validated, the API will create a new user account and return a success
+message indicating that the user has been registered.</p>
+<p>The Register API is a secure and reliable way for users to create new
+accounts on the platform, ensuring that all information is validated and
+checked for uniqueness before the account is created.</p>
+<p><strong>POST Create</strong> -
+http://127.0.0.1:8000/auth/create-user/</p>
+<h2 id="login">Login</h2>
+<p>The <strong>Login API</strong> allows users to authenticate to the
+platform by providing their email and password. Once authenticated, the
+API returns an authentication token that can be used to access protected
+resources.</p>
+<p>The login process involves validating the provided email and password
+against the user database, and if the credentials are correct,
+generating and returning a unique authentication token. This token is
+used to identify the user in subsequent requests and allows them to
+access protected resources without the need to re-authenticate with
+their email and password.</p>
+<p>The Login API is designed to be secure and reliable, using
+industry-standard encryption algorithms and authentication protocols to
+protect user data and prevent unauthorized access. This API is essential
+for any web application that requires user authentication, ensuring that
+only authorized users can access protected resources and that user
+accounts are managed securely and efficiently.</p>
+<h3 id="post-login---http127.0.0.18000authlogin"><strong>POST
+Login</strong> - http://127.0.0.1:8000/auth/login/</h3>
+<h2 id="logout-logout-all">Logout &amp; Logout All</h2>
+<p>The <strong>Logout API</strong> allows users to log out of their
+current session on the platform. This involves revoking the
+authentication token associated with the current session, thereby
+preventing any further access to protected resources using that token.
+Once logged out, the user must re-authenticate to access protected
+resources again.</p>
+<p>The <strong>Logout All</strong> API allows users to log out of all
+active sessions on the platform. This involves revoking all
+authentication tokens associated with the user’s account, thereby
+preventing any further access to protected resources using those tokens.
+This API is useful in situations where a user suspects their account has
+been compromised, or when they want to terminate all active sessions
+across devices.</p>
+<p>Both the Logout and Logout All APIs are designed to be secure and
+reliable, using industry-standard encryption algorithms and
+authentication protocols to protect user data and prevent unauthorized
+access. These APIs are essential for any web application that requires
+user authentication and management, ensuring that user accounts are
+managed securely and efficiently.</p>
+<h3
+id="post-logout-logout-all---http127.0.0.18000authlogout"><strong>POST
+Logout &amp; Logout All</strong> -
+http://127.0.0.1:8000/auth/logout/</h3>
+<h2 id="update-user-information">Update User Information</h2>
+<p>The <strong>Update API</strong> allows users to update their account
+information on the platform. This API accepts new values for the user’s
+email, username, bio, contact information, and image, and updates these
+fields in the user’s account.</p>
+<p>The Update Info API validates the new information provided by the
+user and ensures that it meets any required constraints or standards.
+For example, the API might check that the new email address is not
+already in use by another account, or that the new username meets
+minimum length requirements.</p>
+<p>The Update API is an important component of any user management
+system, allowing users to keep their account information up-to-date and
+relevant. It is designed to be secure and reliable, using
+industry-standard encryption algorithms and authentication protocols to
+protect user data and prevent unauthorized access.</p>
+<h3
+id="update---http127.0.0.18000authupdate-user5"><strong>Update</strong>
+- http://127.0.0.1:8000/auth/update-user/5/</h3>
+</body>
+</html>

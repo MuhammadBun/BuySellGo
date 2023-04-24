@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>post_api</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="get-all-posts-api"><strong>Get All Posts API</strong>:</h1>
+<p>The Get All Posts API allows authenticated users to retrieve a list
+of all posts that have been created on the platform. The API returns a
+JSON object that includes information about each post, such as its
+unique ID, title, content, author, creation date, and any associated
+tags or categories.</p>
+<p><strong>HTTP Method</strong>: GET</p>
+<p><strong>Endpoint</strong>: http://127.0.0.1:8000/post/list_post/</p>
+<p><strong>Permissions</strong>: This API requires the user to be
+authenticated.</p>
+<p><strong>Response Codes:</strong></p>
+<ol type="1">
+<li>200 OK: Returns the list of all posts in the JSON format.</li>
+<li>401 Unauthorized: If the user is not authenticated.</li>
+</ol>
+<h1 id="get-a-post-by-id-api"><strong>Get a Post by ID
+API</strong>:</h1>
+<p>The Get a Post by ID API allows authenticated users to retrieve a
+specific post by its unique ID. The API returns a JSON object that
+includes information about the post, such as its title, content, author,
+creation date, and any associated tags or categories.</p>
+<p><strong>HTTP Method</strong>: GET</p>
+<p><strong>Endpoint</strong>:
+http://127.0.0.1:8000/post/get_user_post/</p>
+<p><strong>Permissions</strong>: This API requires the user to be
+authenticated and the owner of the post.</p>
+<p><strong>Response Codes</strong>:</p>
+<ol type="1">
+<li>200 OK: Returns the post in the JSON format.</li>
+<li>401 Unauthorized: If the user is not authenticated or not the owner
+of the post.</li>
+<li>404 Not Found: If the post does not exist.</li>
+</ol>
+<h1 id="create-a-new-post-api"><strong>Create a New Post
+API</strong>:</h1>
+<p>The Create a New Post API allows authenticated users to create a new
+post. The API requires the user to provide the post’s title, content,
+author, and any associated tags or categories.</p>
+<p><strong>HTTP Method</strong>: POST</p>
+<p><strong>Endpoint</strong>: http://127.0.0.1:8000/post/new_post/</p>
+<p><strong>Permissions</strong>: This API requires the user to be
+authenticated.</p>
+<p><strong>Response Codes</strong>:</p>
+<ol type="1">
+<li>201 Created: Returns the created post in the JSON format.</li>
+<li>400 Bad Request: If the provided data is invalid.</li>
+<li>401 Unauthorized: If the user is not authenticated.</li>
+</ol>
+<h1 id="update-a-post-api"><strong>Update a Post API</strong>:</h1>
+<p>The Update a Post API allows authenticated users to update an
+existing post. The API requires the user to provide the post’s new
+title, content, author, and any associated tags or categories.</p>
+<p><strong>HTTP Method</strong>: PUT</p>
+<p><strong>Endpoint</strong>:
+http://127.0.0.1:8000/post/post_pk/int:pk</p>
+<p><strong>Permissions</strong>: This API requires the user to be
+authenticated and the owner of the post.</p>
+<p><strong>Response Codes</strong>:</p>
+<ol type="1">
+<li>200 OK: Returns the updated post in the JSON format.</li>
+<li>400 Bad Request: If the provided data is invalid.</li>
+<li>401 Unauthorized: If the user is not authenticated or not the owner
+of the post.</li>
+<li>404 Not Found: If the post does not exist.</li>
+</ol>
+<h1 id="delete-a-post-api"><strong>Delete a Post API</strong>:</h1>
+<p>The Delete a Post API allows authenticated users to delete an
+existing post. The API requires the user to be the owner of the
+post.</p>
+<p><strong>HTTP Method</strong>: DELETE</p>
+<p><strong>Endpoint</strong>: http://127.0.0.1:8000/post/post_pk/9</p>
+<p><strong>Permissions</strong>: This API requires the user to be
+authenticated and the owner of the post.</p>
+<p><strong>Response Codes</strong>:</p>
+<ol type="1">
+<li>204 No Content: If the post is successfully deleted.</li>
+<li>401 Unauthorized: If the user is not authenticated or not the owner
+of the post.</li>
+<li>404 Not Found: If the post does not exist.</li>
+</ol>
+<h1 id="get-posts-by-user-id"><strong>Get Posts by User
+ID</strong>:</h1>
+<p>The Get Posts by User ID API allows authenticated users to retrieve a
+list of all posts created by a specific user. The API returns a JSON
+object that includes information about each post, such as its unique ID,
+title, content, author, creation date, and any associated tags or
+categories.</p>
+<p><strong>HTTP Method</strong>: GET</p>
+<p><strong>Endpoint</strong>:
+http://127.0.0.1:8000/post/get_user_post/int:pk</p>
+<p><strong>Permissions</strong>: This API requires the user to be
+authenticated and the owner of the post.</p>
+<p><strong>Response Codes</strong>:</p>
+<ol type="1">
+<li>200 OK: Returns the list of all posts in the JSON format.</li>
+<li>401 Unauthorized: If the user is not authenticated or not the owner
+of the post.</li>
+<li>404 Not Found: If the user does not exist or has not created any
+posts.</li>
+</ol>
+</body>
+</html>
