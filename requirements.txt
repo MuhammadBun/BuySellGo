@@ -28,7 +28,7 @@ Django-Verify-Email==2.0.3
 djangochannelsrestframework==1.1.0
 djangorestframework==3.14.0
 djangorestframework-jwt==1.11.0
-djangorestframework-simplejwt==4.8.0
+ 
 djoser==2.1.0
 exceptiongroup==1.1.1
 hyperlink==21.0.0
