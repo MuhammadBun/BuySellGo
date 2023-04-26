@@ -1,8 +1,10 @@
 from django.contrib.auth import get_user_model
+ 
 from channels.middleware import BaseMiddleware
 from channels.db import database_sync_to_async
 from knox.auth import TokenAuthentication
 from rest_framework.exceptions import AuthenticationFailed
+ 
 from django.contrib.auth.models import AnonymousUser
 from account.models import CustomUser
 class KnoxAuthMiddleware:
