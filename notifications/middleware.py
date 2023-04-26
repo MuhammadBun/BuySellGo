@@ -1,10 +1,8 @@
 from django.contrib.auth import get_user_model
-from rest_framework_simplejwt.authentication import JWTAuthentication
 from channels.middleware import BaseMiddleware
 from channels.db import database_sync_to_async
 from knox.auth import TokenAuthentication
 from rest_framework.exceptions import AuthenticationFailed
-User = get_user_model()
 from django.contrib.auth.models import AnonymousUser
 from account.models import CustomUser
 class KnoxAuthMiddleware:
@@ -29,13 +27,7 @@ class KnoxAuthMiddleware:
  
                 scope['user'] = None
         else:
-            # Authenticate the user using JWT authentication (for HTTP requests)
-            jwt_auth = JWTAuthentication()
-            try:
-                user, jwt_token = jwt_auth.authenticate(scope['request'])
-                scope['user'] = user
-            except (AuthenticationFailed, ValueError):
-                scope['user'] = AnonymousUser()
+            scope['user'] = AnonymousUser()
 
         return await self.inner(scope, receive, send)
 
