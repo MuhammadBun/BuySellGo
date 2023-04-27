@@ -25,14 +25,10 @@ from dotenv import load_dotenv
 load_dotenv()  # load environment variables from .env file
 # SECURITY WARNING: keep the secret key used in production secret!
  
-SECRET_KEY = os.environ.get('SECRET_KEY')
-EMAIL_FROM_USER = os.environ.get('EMAIL_FROM_USER')
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+SECRET_KEY = '=jk$apd56ey5)nzi+(t)x@b&j)6js5^#9y5ok4j$@-y3%ul0qp'
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 TESTING = len(sys.argv) > 1 and sys.argv[1] == 'test'
 ALLOWED_HOSTS = []
 
@@ -166,18 +162,11 @@ CHANNEL_LAYERS = {
 }
 
 ASGI_APPLICATION = "buysellgo.asgi.application"
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
-        },
-    },
-}
+ 
 def verified_callback(user):
     user.is_active = True
 EMAIL_VERIFIED_CALLBACK = verified_callback
-EMAIL_FROM_ADDRESS = os.environ.get('EMAIL_FROM_USER')
+EMAIL_FROM_ADDRESS = 'mhamadben1999@gmail.com'
 EMAIL_MAIL_SUBJECT = 'Confirm your email {{ user.username }}'
 EMAIL_MAIL_HTML = 'account/mail_body.html'
 EMAIL_MAIL_PLAIN = 'account/mail_body.txt'
@@ -190,8 +179,8 @@ EMAIL_PAGE_DOMAIN = 'http://127.0.0.1:8000/' # Host
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL_FROM_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'mhamadben1999@gmail.com'
+EMAIL_HOST_PASSWORD = 'jhunplfdxvldgpuf'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_FROM_USER')
-SERVER_EMAIL = os.environ.get('EMAIL_FROM_USER')
+DEFAULT_FROM_EMAIL = 'mhamadben1999@gmail.com'
+SERVER_EMAIL = 'mhamadben1999@gmail.com'

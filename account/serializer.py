@@ -20,7 +20,7 @@ from .utils import generate_token
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.mail import EmailMessage,get_connection
-from buysellgo.settings import EMAIL_FROM_USER,TESTING
+ 
 import threading
  
 class UserSerializer(serializers.ModelSerializer):
