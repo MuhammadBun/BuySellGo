@@ -1,9 +1,7 @@
 #  ✨ BuySellGo Backend Project By  ✨
-```sh
 [![Django Icon](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svg/brands/django.svg)](https://www.djangoproject.com/)
 [![Python Icon](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svg/brands/python.svg)](https://www.python.org/)
-
-```
+ 
 ## Features
 - Authentication with Knox: The BuySellGo backend project includes authentication features such as sign up, sign in, logout, and logout all using Knox. This allows users to securely access their accounts from different platforms and devices.
 - Token Sessions and Real-Time Notifications: The project includes token sessions and real-time notifications to keep users informed about important updates and events.
