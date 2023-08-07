@@ -1,5 +1,6 @@
 #  ✨ BuySellGo Backend Project By  ✨
 [![Django Icon](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svg/brands/django.svg)](https://www.djangoproject.com/)
+
 [![Python Icon](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/svg/brands/python.svg)](https://www.python.org/)
  
 ## Features
