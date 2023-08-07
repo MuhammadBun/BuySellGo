@@ -1,4 +1,4 @@
-#  ✨ BuySellGo Backend Project By  ✨
+#  ✨ BuySellGo Backend Project✨
 ```sh
 Django
 Python
