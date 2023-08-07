@@ -1,5 +1,6 @@
 #  ✨ BuySellGo Backend Project By  ✨
-<img src="fa-crown.svg" width="50" height="50">
+![fa-crown](fa-crown.svg)
+
 ```sh
 
 Django
