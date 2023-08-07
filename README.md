@@ -1,5 +1,5 @@
 #  ✨ BuySellGo Backend Project By  ✨
-![foo ![bar](/https://img.icons8.com/?size=512&id=qV-JzWYl9dzP&format=png)](/https://img.icons8.com/?size=512&id=qV-JzWYl9dzP&format=png)
+![foo ![bar](/https://img.icons8.com/?size=512&id=qV-JzWYl9dzP&format=png)]
 
 ```sh
 
